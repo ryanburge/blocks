@@ -87,5 +87,38 @@ cces %>%
 #> 1  1.54 0.499   500 0.160 0.0223  1.50  1.57
 ```
 
+## Simple Mean and Median
+
+I wanted a simple function to calculate the mean and the median. It
+takes just one variable and computes both
+statistics.
+
+``` r
+money1 <- read_csv("https://raw.githubusercontent.com/ryanburge/pls2003_sp17/master/sal_work.csv")
+
+money1 
+#> # A tibble: 1,025 x 3
+#>       X1 salary names             
+#>    <int>  <int> <chr>             
+#>  1     1  14736 Darin Casem       
+#>  2     2  21261 Jaelyn Groesbeck  
+#>  3     3  16831 Theodis Butler    
+#>  4     4  34400 Joewid Rettig     
+#>  5     5  31239 Breianna Gilbert  
+#>  6     6  51580 Marcus Gray II    
+#>  7     7  49699 Berenice Garcia   
+#>  8     8  66805 Elijah Garrett    
+#>  9     9  49321 Jeremiah Bishop Jr
+#> 10    10  67126 Sultana al-Jabbour
+#> # ... with 1,015 more rows
+
+money1  %>% 
+  mean_med(salary)
+#> # A tibble: 1 x 2
+#>      mean median
+#>     <dbl>  <int>
+#> 1 1247953  35853
+```
+
   - let me know what you think on twitter
     <a href="https://twitter.com/ryanburge">@ryanburge</a>
