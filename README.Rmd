@@ -1,0 +1,78 @@
+---
+output:
+  github_document
+---
+
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  comment = "#>",
+  fig.path = "README-"  
+)
+options(width = 110)
+```
+
+
+### Installation
+
+You can install:
+
+* the latest development version from GitHub with
+
+    ```R
+    install.packages("devtools")
+    devtools::install_github("ryanburge/blocks/building")
+    ```
+    
+## There are two functions to building right now 
+
+
+### Counting Things
+
+I love the functionality of tabyl, but it doesn't take a weight variable. Here's the simple version `ct()`
+
+```{r, warning = FALSE, message = FALSE}
+library(tidyverse)
+library(building)
+cces <- read_csv("https://raw.githubusercontent.com/ryanburge/blocks/master/cces.csv")
+
+cces %>% 
+  ct(race)
+```
+
+Note that you are presented with a count column and a pct column. 
+
+Let's add weights
+
+```{r, warning = FALSE, message = FALSE}
+cces %>% 
+  ct(race, commonweight_vv)
+```
+
+Notice that it's pipeable. And if you don't include the weight variable then it won't be calculated with a weight. 
+
+
+## Getting Confidence Intervals
+
+Oftentimes in social science we like to see what our 95% confidence intervals are, but that's a lot of syntax. It's easy with the `mean_ci` function
+
+```{r, warning = FALSE, message = FALSE}
+cces %>% 
+  mean_ci(gender)
+```
+
+The default is a 95% confidence interval. However that can be changed easily. 
+
+
+```{r, warning = FALSE, message = FALSE}
+cces %>% 
+  mean_ci(gender, .84)
+```
+
+
+* submit suggestions and report bugs: https://github.com/ryanburge/building/issues
+* let me know what you think on twitter <a href="https://twitter.com/ryanburge">@ryanburge</a>
+
+
+
