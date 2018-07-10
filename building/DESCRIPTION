@@ -1,6 +1,6 @@
 Package: building
 Title: Some Basic Functions that I Use Frequently
-Version: 0.0.0.1
+Version: 0.0.0.2
 Authors@R: person("Ryan", "Burge", email = "ryanburge@gmail.com", role = c("aut", "cre"))
 Description: This package creates a simple count with frequencies. Both with and without weights. It all also calculates means with 95 percent or 84 percent confidence intervals. 
 Depends: R (>= 3.4.3), dplyr, rlang
