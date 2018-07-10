@@ -13,7 +13,6 @@
 
 mean_pad <- function(df, var) {
   var <- enquo(var)
-  ci <- enquo(ci)
   
   df %>% 
     summarise(mean = mean(!! var, na.rm = TRUE),
