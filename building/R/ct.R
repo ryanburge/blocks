@@ -1,19 +1,35 @@
-#' A Count Function
+
+#' A Count Function with Weights
 #'
-#' This function gives you a simple count with percentages
+#' This function gives you a simple count with percentages that is weighted
 #' @param df Name of the Dataset
 #' @param var Variable to Count
+#' @param wt Weighting Variable
 #' @keywords Count
 #' @export
 #' @examples
-#' ct()
+#' ct_wt()
 
-ct <- function(df, var) {
+ct <- function(df, var, wt) {
   var <- enquo(var)
+  wt <- enquo(wt)
+  
+  if(missing(wt)) {
+    df %>%
+      count(!! var) %>% 
+      mutate(pct = prop.table(n)) 
+  } else {
   
   df %>%
-    count(!! var) %>% 
+    count(!! var, wt = !! wt) %>% 
     mutate(pct = prop.table(n)) 
+    
+  }
 }
+
+
+
+
+
 
 
