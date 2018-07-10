@@ -10,9 +10,9 @@ You can install:
     devtools::install_github("ryanburge/blocks/building")
     ```
 
-## There are two functions to building right now
+### There are two functions to building right now
 
-### Counting Things
+## Counting Things
 
 I love the functionality of tabyl, but it doesn’t take a weight
 variable. Here’s the simple version `ct()`
@@ -87,7 +87,5 @@ cces %>%
 #> 1  1.54 0.499   500 0.160 0.0223  1.50  1.57
 ```
 
-  - submit suggestions and report bugs:
-    <https://github.com/ryanburge/building/issues>
   - let me know what you think on twitter
     <a href="https://twitter.com/ryanburge">@ryanburge</a>
