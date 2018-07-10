@@ -4,12 +4,14 @@
 \alias{mean_ci}
 \title{A Mean with 95 percent CIs}
 \usage{
-mean_ci(df, var)
+mean_ci(df, var, ci)
 }
 \arguments{
 \item{df}{Name of the Dataset}
 
 \item{var}{Variable to find the mean of}
+
+\item{ci}{Confidence Interval, expressed as a decimal. i.e. .84. Defaults to .95}
 }
 \description{
 This function gives you a mean with 95 percent CIs

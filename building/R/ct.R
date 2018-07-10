@@ -14,7 +14,7 @@ ct <- function(df, var, wt) {
   var <- enquo(var)
   wt <- enquo(wt)
   
-  if(missing(wt)) {
+  if(quo_is_missing(wt)) {
     df %>%
       count(!! var) %>% 
       mutate(pct = prop.table(n)) 

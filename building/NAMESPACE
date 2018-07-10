@@ -2,4 +2,3 @@
 
 export(ct)
 export(mean_ci)
-export(mean_pad)
