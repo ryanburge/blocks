@@ -84,4 +84,17 @@ money1  %>%
   mean_med(salary)
 ```
 
+## Making a quick visualization of a bar chart
+
+I make a lot of really quick bar charts. Too many of them. So if I use the `ct()` function, this moves easily into making a `geom_col()` type bar chart. This gives a percentage annotation at the top of each bar. 
+
+```{r, warning = FALSE, message = FALSE}
+a1 <- cces %>% 
+  ct(race, commonweight_vv)
+
+gg_col(a1, race, pct)
+
+```
+
+
 * let me know what you think on twitter <a href="https://twitter.com/ryanburge">@ryanburge</a>
