@@ -22,7 +22,8 @@ ct <- function(df, var, wt) {
   
   df %>%
     count(!! var, wt = !! wt) %>% 
-    mutate(pct = prop.table(n)) 
+    mutate(pct = prop.table(n)) %>% 
+      mutate(pct = round(pct, 3))
     
   }
 }
