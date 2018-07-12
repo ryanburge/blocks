@@ -133,7 +133,28 @@ a1 <- cces %>%
 gg_col(a1, race, pct)
 ```
 
-<img src="gg_col.png" alt="drawing" width="400px"/> <!-- -->
+<img src="gg_col1.png" alt="drawing" width="600px"/> <!-- -->
+
+You can easily add the percentages to the top of the bars
+
+``` r
+
+gg_col(a1, race, pct, add_labels = TRUE)
+```
+
+<img src="gg_col2.png" alt="drawing" width="600px"/> <!-- -->
+
+
+And you can change the font by using a font style that is available on
+<a href= "https://fonts.google.com">Google Fonts</a>
+
+``` r
+
+gg_col(a1, race, pct, "Indie Flower", add_labels = TRUE)
+```
+
+<img src="gg_col3.png" alt="drawing" width="600px"/> <!-- -->
+
 
   - let me know what you think on twitter
     <a href="https://twitter.com/ryanburge">@ryanburge</a>
