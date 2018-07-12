@@ -17,7 +17,9 @@ ct <- function(df, var, wt) {
   if(quo_is_missing(wt)) {
     df %>%
       count(!! var) %>% 
-      mutate(pct = prop.table(n)) 
+      mutate(pct = prop.table(n)) %>% 
+      mutate(pct = round(pct, 3))
+    
   } else {
   
   df %>%
