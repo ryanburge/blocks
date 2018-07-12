@@ -4,7 +4,7 @@
 \alias{gg_col}
 \title{A Quick ggcol chart}
 \usage{
-gg_col(df, xvar, yvar, fff)
+gg_col(df, xvar, yvar, fff, add_labels = FALSE)
 }
 \arguments{
 \item{df}{Name of the Dataset}
@@ -14,6 +14,8 @@ gg_col(df, xvar, yvar, fff)
 \item{yvar}{What is going to be on the y-axis, usually pct}
 
 \item{fff}{What font you would like from Google fonts. Must be surrounded with quotation marks. Example: "Roboto". Defaults to Oswald.}
+
+\item{add_labels}{This will give you percentage above each bar. It's off by default.}
 }
 \description{
 This function gives you a histogram with percentage annotations
