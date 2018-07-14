@@ -84,6 +84,20 @@ money1  %>%
   mean_med(salary)
 ```
 
+## Convert all NAs in a dataframe to Zero
+
+```{r, warning = FALSE, message = FALSE}
+x <- c(1, 2, 3, NA, 5, NA, 6, NA, 8)
+y <- c(11, 23, NA, 4, 6, NA, NA, NA, 22)
+
+df <- data.frame(x,y) %>% as.tibble()
+
+df
+
+na_zero(df, y)
+
+```
+
 ## Making a quick visualization of a bar chart
 
 I make a lot of really quick bar charts. Too many of them. So if I use the `ct()` function, this moves easily into making a `geom_col()` type bar chart. This gives a percentage annotation at the top of each bar. 
