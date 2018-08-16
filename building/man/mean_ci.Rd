@@ -4,7 +4,7 @@
 \alias{mean_ci}
 \title{A Mean with 95 percent CIs}
 \usage{
-mean_ci(df, var, wt = NULL, ci)
+mean_ci(df, var, wt, ci = 0.95)
 }
 \arguments{
 \item{df}{Name of the Dataset}
