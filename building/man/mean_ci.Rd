@@ -4,12 +4,14 @@
 \alias{mean_ci}
 \title{A Mean with 95 percent CIs}
 \usage{
-mean_ci(df, var, ci)
+mean_ci(df, var, wt = NULL, ci)
 }
 \arguments{
 \item{df}{Name of the Dataset}
 
 \item{var}{Variable to find the mean of}
+
+\item{wt}{Weight to be applied}
 
 \item{ci}{Confidence Interval, expressed as a decimal. i.e. .84. Defaults to .95}
 }
