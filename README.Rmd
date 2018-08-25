@@ -67,7 +67,7 @@ The default is a 95% confidence interval. However that can be changed easily.
 
 ```{r, warning = FALSE, message = FALSE}
 cces %>% 
-  mean_ci(gender, .84)
+  mean_ci(gender, ci = .84)
 ```
 
 
@@ -83,6 +83,25 @@ money1
 money1  %>% 
   mean_med(salary)
 ```
+
+
+## Two Value Correlations 
+
+Here's a simple function that generates a pearson correlation of two variables with a p-value.  
+
+```{r, warning = FALSE, message = FALSE}
+x <- c(1, 2, 3, 7, 5, 777, 6, 411, 8)
+y <- c(11, 23, 1, 4, 6, 22455, 34, 22, 22)
+z <- c(34, 3, 21, 4555, 75, 2, 3334, 1122, 22312)
+
+test <- data.frame(x,y,z) %>% as.tibble()
+
+test %>% 
+  filter(z > 10) %>% 
+  corr(x,y)
+
+```
+
 
 ## Convert all NAs in a dataframe to Zero
 

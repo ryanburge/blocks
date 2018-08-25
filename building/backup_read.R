@@ -2,13 +2,13 @@
 ### Installation
 
 You can install:
-
+  
   - the latest development version from GitHub with
-    
-    ``` r
-    install.packages("devtools")
-    devtools::install_github("ryanburge/blocks/building")
-    ```
+
+``` r
+install.packages("devtools")
+devtools::install_github("ryanburge/blocks/building")
+```
 
 ### There are just a handful of functions to building right now
 
@@ -69,10 +69,10 @@ function
 ``` r
 cces %>% 
   mean_ci(gender)
-#> # A tibble: 1 x 7
-#>    mean    sd     n level     se lower upper
-#>   <dbl> <dbl> <int> <dbl>  <dbl> <dbl> <dbl>
-#> 1  1.54 0.499   500  0.05 0.0223  1.49  1.58
+#> # A tibble: 1 x 6
+#>    mean    sd     n     se lower upper
+#>   <dbl> <dbl> <int>  <dbl> <dbl> <dbl>
+#> 1  1.54 0.499   500 0.0223  1.49  1.58
 ```
 
 The default is a 95% confidence interval. However that can be changed
@@ -80,7 +80,7 @@ easily.
 
 ``` r
 cces %>% 
-  mean_ci(gender, ci = .84)
+  mean_ci(gender, .84)
 #> # A tibble: 1 x 7
 #>    mean    sd     n level     se lower upper
 #>   <dbl> <dbl> <int> <dbl>  <dbl> <dbl> <dbl>
@@ -118,27 +118,6 @@ money1  %>%
 #>       mean median
 #>      <dbl>  <int>
 #> 1 1247953.  35853
-```
-
-## Two Value Correlations
-
-Here’s a simple function that generates a pearson correlation of two
-variables with a p-value.
-
-``` r
-x <- c(1, 2, 3, 7, 5, 777, 6, 411, 8)
-y <- c(11, 23, 1, 4, 6, 22455, 34, 22, 22)
-z <- c(34, 3, 21, 4555, 75, 2, 3334, 1122, 22312)
-
-test <- data.frame(x,y,z) %>% as.tibble()
-
-test %>% 
-  filter(z > 10) %>% 
-  corr(x,y)
-#> # A tibble: 1 x 8
-#>   estimate statistic p.value     n conf.low conf.high method                               alternative
-#>      <dbl>     <dbl>   <dbl> <int>    <dbl>     <dbl> <chr>                                <chr>      
-#> 1    0.288     0.673   0.531     5   -0.594     0.856 Pearson's product-moment correlation two.sided
 ```
 
 ## Convert all NAs in a dataframe to Zero
@@ -216,3 +195,4 @@ gg_col(a1, race, pct, "Indie Flower", add_labels = TRUE)
   
   - let me know what you think on twitter
 <a href="https://twitter.com/ryanburge">@ryanburge</a>
+  
