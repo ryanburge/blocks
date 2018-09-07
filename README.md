@@ -178,6 +178,24 @@ na_zero(df, y)
 #> 9     8    22
 ```
 
+## Bind Several Dataframes together
+
+Oftentimes I make many little dataframes that I need to bind\_rows to
+put into one large dataframe. As long as those dataframes have the same
+naming convention that can be done.
+
+``` r
+dd1 <- data.frame(a = 1, b = 2)
+dd2 <- data.frame(a = 3, b = 4)
+dd3 <- data.frame(a = 5, b = 6) 
+
+bind_df("dd")
+#>   a b
+#> 1 1 2
+#> 2 3 4
+#> 3 5 6
+```
+
 ## Making a quick visualization of a bar chart
 
 I make a lot of really quick bar charts. Too many of them. So if I use
@@ -216,3 +234,4 @@ gg_col(a1, race, pct, "Indie Flower", add_labels = TRUE)
   
   - let me know what you think on twitter
 <a href="https://twitter.com/ryanburge">@ryanburge</a>
+  
