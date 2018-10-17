@@ -7,7 +7,7 @@
 bind_df(input)
 }
 \arguments{
-\item{input}{Pattern of the dataframes that you want to row bin}
+\item{input}{Pattern of the dataframes that you want to row bind}
 }
 \description{
 This function will bind the rows of all dataframes together that match a certain pattern

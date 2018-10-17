@@ -2,7 +2,7 @@
 #' Binding the Rows of Many Dataframes Together
 #'
 #' This function will bind the rows of all dataframes together that match a certain pattern
-#' @param input Pattern of the dataframes that you want to row bin
+#' @param input Pattern of the dataframes that you want to row bind
 #' @keywords bind_rows
 #' @export
 #' @examples

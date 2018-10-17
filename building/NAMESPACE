@@ -3,7 +3,6 @@
 export(bind_df)
 export(corr)
 export(ct)
-export(gg_col)
 export(mean_ci)
 export(mean_med)
 export(na_zero)
