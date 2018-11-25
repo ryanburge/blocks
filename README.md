@@ -200,8 +200,14 @@ bind_df("dd")
 
 I recode all the time, but unfortunately when you recode from numeric to
 character the factor levels are plotted in alphabetical order. There’s a
-way around that
-now.
+way around that now.
+
+I found this [terrific
+function](https://stackoverflow.com/questions/49572416/r-convert-to-factor-with-order-of-levels-same-with-case-when)
+written by [Dennis
+YL](https://stackoverflow.com/users/5068121/dennis-yl), where he had the
+same problem that I
+had.
 
 ``` r
 cces <- read_csv("https://raw.githubusercontent.com/ryanburge/cces/master/CCES%20for%20Methods/small_cces.csv")
