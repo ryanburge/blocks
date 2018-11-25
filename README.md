@@ -196,7 +196,35 @@ bind_df("dd")
 #> 3 5 6
 ```
 
+## Recode things and keep the factor levels
+
+I recode all the time, but unfortunately when you recode from numeric to
+character the factor levels are plotted in alphabetical order. There’s a
+way around that
+now.
+
+``` r
+cces <- read_csv("https://raw.githubusercontent.com/ryanburge/cces/master/CCES%20for%20Methods/small_cces.csv")
+
+graph <- cces %>% 
+  mutate(pid_new = frcode(pid7 == 1 ~ "Strong Democrat", 
+                          pid7 == 2 ~ "Not Strong Democrat", 
+                          pid7 == 3 ~ "Lean Democrat", 
+                          pid7 == 4 ~ "Independent", 
+                          pid7 == 5 ~ "Lean Republican", 
+                          pid7 == 6 ~ "Not Strong Republican", 
+                          pid7 == 7 ~ "Strong Republican", 
+                          TRUE ~ "REMOVE")) %>% 
+  ct(pid_new)
+
+
+graph %>% 
+  filter(pid_new != "REMOVE") %>% 
+  ggplot(., aes(x = pid_new, y = pct)) +
+  geom_col()
+```
+
+![](README-unnamed-chunk-10-1.png)<!-- -->
 
   - let me know what you think on twitter
-<a href="https://twitter.com/ryanburge">@ryanburge</a>
-  
+    <a href="https://twitter.com/ryanburge">@ryanburge</a>
